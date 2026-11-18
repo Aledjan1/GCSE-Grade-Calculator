@@ -172,4 +172,27 @@ calculateBtn.addEventListener("click", function () {
   }
 
   averageGrade.textContent = avgGrade;
+
+  overallResult.textContent = `${average.toFixed(2)}%`;
+
+  progressCircle.style.background = `conic-gradient(
+    #7042d5 ${average}%,
+    #e4d9ff ${average}%
+  )`;
+});
+
+subjectsBody.addEventListener("input", function () {
+  averagePercentage.textContent = "-";
+  averageGrade.textContent = "-";
+  overallResult.textContent = "0%";
+  progressCircle.style.background = "conic-gradient(#7042d5 0%, #e4d9ff 0%)";
+  const percentages = subjectsBody.querySelectorAll(".percentage");
+  const grades = subjectsBody.querySelectorAll(".grade");
+
+  for (let i = 0; i < percentages.length; i++) {
+    percentages[i].textContent = "-";
+  }
+  for (let j = 0; j < grades.length; j++) {
+    grades[j].textContent = "-";
+  }
 });

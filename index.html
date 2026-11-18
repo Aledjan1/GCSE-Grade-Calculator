@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GCSE Grade Calculator</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <main class="calculator">
+      <header class="header">
+        <div class="header-icon">🎓</div>
+        <div>
+          <h1>GCSE Grade Calculator</h1>
+          <p>Calculate your results across multiple subjects</p>
+        </div>
+      </header>
+
+      <div class="dashboard">
+        <section class="subjects-panel">
+          <h2>Subject Results</h2>
+          <p class="hint">Enter your marks and maximum possible marks.</p>
+
+          <div class="table-wrapper">
+            <table class="subjects-table">
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Marks</th>
+                  <th>Max</th>
+                  <th>%</th>
+                  <th>Grade</th>
+                </tr>
+              </thead>
+
+              <tbody id="subjects-body">
+                <tr class="subject-row">
+                  <td>
+                    <select class="subject-select">
+                      <option value="" selected disabled>
+                        Choose a subject
+                      </option>
+                      <option value="Mathematics">Mathematics</option>
+                      <option value="English Language">English Language</option>
+                      <option value="English Literature">
+                        English Literature
+                      </option>
+                      <option value="Biology">Biology</option>
+                      <option value="Chemistry">Chemistry</option>
+                      <option value="Physics">Physics</option>
+                      <option value="Combined Science">Combined Science</option>
+                      <option value="Computer Science">Computer Science</option>
+                      <option value="History">History</option>
+                      <option value="Geography">Geography</option>
+                      <option value="French">French</option>
+                      <option value="Spanish">Spanish</option>
+                      <option value="Art and Design">Art and Design</option>
+                      <option value="Business Studies">Business Studies</option>
+                      <option value="Physical Education">
+                        Physical Education
+                      </option>
+                    </select>
+                  </td>
+                  <td>
+                    <input
+                      class="marks-input"
+                      type="number"
+                      min="0"
+                      placeholder="0"
+                    />
+                  </td>
+                  <td>
+                    <input
+                      class="max-input"
+                      type="number"
+                      min="1"
+                      placeholder="100"
+                    />
+                  </td>
+                  <td class="percentage">—</td>
+                  <td class="grade">—</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p class="error-message" id="error-message"></p>
+
+          <div class="actions">
+            <button class="add-btn" type="button">+ Add Subject</button>
+            <button class="calculate-btn" type="button">
+              Calculate Results
+            </button>
+          </div>
+        </section>
+
+        <aside class="summary-panel">
+          <h2>Summary</h2>
+
+          <div class="summary-item">
+            <span>Average %</span>
+            <strong id="average-percentage">—</strong>
+          </div>
+
+          <div class="summary-item">
+            <span>Average Grade</span>
+            <strong id="average-grade">—</strong>
+          </div>
+
+          <div class="progress-circle" id="progress-circle">
+            <div class="progress-inner">
+              <strong id="overall-result">0%</strong>
+              <span>Overall Result</span>
+            </div>
+          </div>
+
+          <p class="disclaimer">
+            Practice grading scale only. Official GCSE grade boundaries vary by
+            exam board, subject and year.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>

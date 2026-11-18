@@ -1,0 +1,272 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  padding: 40px 20px;
+  background: #f0ebff;
+  font-family: Arial, sans-serif;
+  color: #292043;
+}
+
+.calculator {
+  max-width: 1150px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 15px 40px rgba(71, 44, 132, 0.12);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 28px 32px;
+  background: linear-gradient(120deg, #f4edff, #e6d9ff);
+}
+
+.header-icon {
+  display: grid;
+  place-items: center;
+  width: 65px;
+  height: 65px;
+  background: #7042d5;
+  border-radius: 16px;
+  font-size: 32px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 28px;
+}
+
+.header p,
+.hint {
+  margin: 0;
+  color: #7d7296;
+  font-size: 14px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  padding: 24px;
+}
+
+.subjects-panel,
+.summary-panel {
+  padding: 22px;
+  background: #faf8ff;
+  border: 1px solid #e9e1fa;
+  border-radius: 16px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 19px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 22px;
+}
+
+.subjects-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 14px;
+}
+
+.subjects-table th {
+  padding: 13px 9px;
+  background: #eae2ff;
+  white-space: nowrap;
+}
+
+.subjects-table td {
+  padding: 12px 9px;
+  border-bottom: 1px solid #e9e1fa;
+}
+
+.subjects-table td:first-child {
+  min-width: 170px;
+  font-weight: 600;
+}
+
+.subjects-table input {
+  width: 72px;
+  padding: 10px 7px;
+  border: 1px solid #c9b9ef;
+  border-radius: 7px;
+  font-size: 14px;
+  outline: none;
+}
+
+.subject-select {
+  width: 100%;
+  max-width: 190px;
+  padding: 10px 7px;
+  border: 1px solid #c9b9ef;
+  border-radius: 7px;
+  background: #fff;
+  color: #292043;
+  font-size: 13px;
+  cursor: pointer;
+  outline: none;
+}
+
+.subject-select:focus,
+.subjects-table input:focus {
+  border-color: #7042d5;
+}
+
+.percentage,
+.grade {
+  font-weight: 700;
+}
+
+.grade-badge {
+  display: inline-block;
+  min-width: 32px;
+  padding: 7px;
+  border-radius: 7px;
+  background: #7042d5;
+  color: #fff;
+  text-align: center;
+}
+
+.error-message {
+  min-height: 20px;
+  color: #d13d53;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+button {
+  padding: 13px 17px;
+  border: none;
+  border-radius: 9px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.add-btn {
+  background: #eee7ff;
+  color: #7042d5;
+}
+
+.calculate-btn {
+  background: #7042d5;
+  color: white;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #e9e1fa;
+  font-size: 14px;
+}
+
+.summary-item strong {
+  color: #6036c5;
+  font-size: 19px;
+}
+
+.progress-circle {
+  display: grid;
+  place-items: center;
+  width: 200px;
+  height: 200px;
+  margin: 30px auto 15px;
+  border-radius: 50%;
+  background: conic-gradient(#7042d5 0%, #e4d9ff 0%);
+}
+
+.progress-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  background: #faf8ff;
+}
+
+.progress-inner strong {
+  font-size: 36px;
+  color: #6036c5;
+}
+
+.progress-inner span {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #7d7296;
+}
+
+.disclaimer {
+  margin-top: 20px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #857a9c;
+  text-align: center;
+}
+
+@media (max-width: 850px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .header {
+    padding: 22px;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+}
+
+.subject-select.invalid,
+.subjects-table input.invalid {
+  border: 2px solid #d13d53;
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+  }
+
+  .dashboard {
+    padding: 12px;
+  }
+
+  .subjects-panel,
+  .summary-panel {
+    padding: 14px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}

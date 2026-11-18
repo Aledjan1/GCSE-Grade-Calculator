@@ -46,3 +46,7 @@ Users can enter marks for multiple subjects, calculate percentages, and view est
 ## Important Note
 
 This calculator uses a simplified grading scale for JavaScript practice. Official GCSE grade boundaries vary depending on the examination board, subject and year.
+
+## Demo link:
+
+https://aledjan1.github.io/GCSE-Grade-Calculator/
